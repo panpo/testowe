@@ -1887,6 +1887,14 @@
 
             //Wait until the map resources are ready.
             map.events.add('ready', function () {
+                map.controls.add([
+                    new atlas.control.ZoomControl(),
+                    new atlas.control.CompassControl(),
+                    new atlas.control.PitchControl(),
+                    new atlas.control.StyleControl()
+                ], {
+                    position: "top-right"
+                });
                 line = new atlas.Shape(new atlas.data.LineString(path));
 
                 //Create a data source and add it to the map.
@@ -1918,14 +1926,13 @@
     </script>
 </head>
 <body onload="GetMap()">
-    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
+    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:800px;"></div>
 
     <div style="position:absolute;top:0px;left:calc(50% - 100px);background-color:white;padding:5px;">Click the map to animate line.</div>
 
     <fieldset style="width:calc(100% - 30px);min-width:290px;margin-top:10px;">
-        <legend><h1 style="font-size:16px">Trasa procesji</h1></legend>
-        Animacja trasy procesji Chrześcijańskiej jaka odbyła się z relikwą sześciu świętych
-        Kości Przemówiły!!!</a>
+        <legend><h1 style="font-size:16px">Kości Przemówiły!!!</h1></legend>
+        Animacja trasy jaką odbyła relikwa sześciu świętych zarówno podczas procesji Chrześcijańskiej jak i poza nią <br>
     </fieldset>
 </body>
 </html>
